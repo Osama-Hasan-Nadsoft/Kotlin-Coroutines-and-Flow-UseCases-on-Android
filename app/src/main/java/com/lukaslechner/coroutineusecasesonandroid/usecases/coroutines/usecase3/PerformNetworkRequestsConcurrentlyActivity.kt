@@ -71,10 +71,12 @@ class PerformNetworkRequestsConcurrentlyActivity : BaseActivity() {
 
         val versionFeatures = uiState.versionFeatures
         val versionFeaturesString = versionFeatures.joinToString(separator = "<br><br>") {
-            "<b>New Features of ${it.androidVersion.name} </b> <br> ${it.features.joinToString(
-                prefix = "- ",
-                separator = "<br>- "
-            )}"
+            "<b>New Features of ${it.androidVersion.name} </b> <br> ${
+                it.features.joinToString(
+                    prefix = "- ",
+                    separator = "<br>- "
+                )
+            }"
         }
 
         textViewResult.text = fromHtml(versionFeaturesString)
